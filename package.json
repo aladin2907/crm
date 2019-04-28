@@ -1,0 +1,22 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "fsapp with angular and note",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aladin2907/crm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aladin2907/crm/issues"
+  },
+  "homepage": "https://github.com/aladin2907/crm#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
