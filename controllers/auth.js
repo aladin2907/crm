@@ -1,3 +1,6 @@
+const User = require('../models/User')
+
+
 module.exports.login = function(req, res) {
 
     res.status(200).json({
@@ -10,8 +13,10 @@ module.exports.login = function(req, res) {
 
 
 module.exports.register = function(req, res) {
-
-    res.status(200).json({
-        register: 'from controller'
-    })
+//email password
+   new user = new User({
+       email: req.body.email,
+       password: req.password
+   })
+   user.save().then(() => console.log('user created'))
 }
