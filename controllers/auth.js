@@ -16,7 +16,7 @@ module.exports.register = function(req, res) {
 //email password
    new user = new User({
        email: req.body.email,
-       password: req.password
+       password: req.body.password
    })
    user.save().then(() => console.log('user created'))
 }
