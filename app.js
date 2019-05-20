@@ -12,7 +12,7 @@ const keys =require('./config/keys')
 
 mongoose.connect(keys.mongoURI)
         .then(() =>console.log('MongoDB connected'))
-        .catch(Error => console.log(Error))
+        .catch(error => console.log(error))
 
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
