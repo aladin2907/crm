@@ -1,14 +1,11 @@
-const User = require('../models/User')
+ const bcrypt =require('bcryptjs')
+ const User = require('../models/User')
 
 
 module.exports.login = function(req, res) {
 
-   res.status(200).json({
-        login: {
-            email: req.body.email,
-            password: req.body.password
-        }
-    }) 
+   //
+   
 }
 
 
@@ -22,6 +19,20 @@ if (candidate){
     })
 }  
 else {
-    // create user
+    // need create user
+    const salt=bcrypt.genSaltSync(10)
+    const password = req.body.password
+    const user = new User({
+        email: req.body.email,
+        password: bcrypt.hashSync(password, salt)
+    })
+    try{
+        await user.save()
+        res.status(201).json(user)
+    }  catch(e){
+        //error must was doing
+
+    }
+    
 }
 }
