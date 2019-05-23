@@ -1,10 +1,10 @@
 const exspress = require('express')
-const router = exspress.Router()
 const controller = require('../controllers/category')
+const passport = require ('passport')
+const router = exspress.Router()
 
 
-
-router.get('/', controller.getAll)
+router.get('/', passport.authenticate('jwt', {session: false}), controller.getAll)
 router.get('/:id', controller.getById)
 router.delete('/:id', controller.remove)
 router.post('/', controller.create)
